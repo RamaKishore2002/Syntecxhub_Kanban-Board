@@ -1,0 +1,87 @@
+
+      :root {
+            --bg: #3ed5a3;
+            --todo: #ffecb3;
+            --doing: #b3e5fc;
+            --done: #c8e6c9;
+        }
+
+        body { 
+            font-family: sans-serif; 
+            background: var(--bg); 
+            padding: 20px; }
+        
+        .board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            align-items: start;
+        }
+
+        .column {
+            background: #ebedef;
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 400px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .column h2 { 
+            text-align: center; 
+            font-size: 1.2rem; 
+            color: brown; }
+
+        .task-list { 
+            min-height: 300px;
+            border-radius: 5px;
+        }
+
+        .card {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: grab;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .card:active { cursor: grabbing; }
+
+        /* Color Coding */
+        [data-status="todo"] .card { border-left: 5px solid }
+        [data-status="doing"] .card { border-left: 5px solid  }
+        [data-status="done"] .card { border-left: 5px solid }
+
+        .btn-add { 
+            width: 100%; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 5px; 
+            background: salmon; 
+            cursor: pointer; 
+        }
+
+        .btn-add:hover { 
+            background: #ccc; 
+        }
+        
+        .delete-btn { 
+            color: #ff5252; 
+            cursor: pointer; 
+            font-weight: bold; 
+            border: none; 
+            background: none; 
+        }
+
+        #todo  { 
+            background-color: #eac145;
+        }
+        #doing  { 
+            background-color: #47c0f8; 
+        }
+        #done  { 
+            background-color: #6cef70; 
+        }
